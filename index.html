@@ -93,8 +93,8 @@
     <select id="tema-poster" onchange="tampilkanRekomendasi()">
         <option value="">-- Pilih salah satu --</option>
         <option value="alam">Alam & Lingkungan 🌿</option>
-		<option value="pendidikan">Pendidikan 🌿</option>
-		<option value="kesehatan">Kesehatan 🌿</option>
+		<option value="pendidikan">Pendidikan 🎓</option>
+		<option value="kesehatan">Kesehatan 🏥</option>
         <option value="teknologi">Teknologi & Masa Depan 🤖</option>
         <option value="kuliner">Kuliner & Makanan 🍔</option>
         <option value="retro">Vintage/Retro 📻</option>
@@ -104,11 +104,197 @@
         <p>Palet warna akan muncul di sini setelah Anda memilih tema.</p>
         <div class="palet-container" id="palet-display">
             </div>
+			<style>
+    /* Styling Khusus untuk Bagian Contoh Poster */
+    .tech-card {
+        background-color: #ffffff; /* Latar belakang putih */
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        margin-top: 25px; /* Jarak dengan elemen di atasnya */
+        text-align: center;
+        max-width: 600px; /* Lebar maksimum seperti card sebelumnya */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tech-card h2 {
+        color: #4CAF50; /* Menggunakan warna hijau yang sama dengan "Hijau Daun" agar konsisten */
+        margin-bottom: 25px;
+        font-size: 1.5em;
+        border-bottom: 2px solid #8BC34A; /* Garis bawah tipis */
+        padding-bottom: 10px;
+    }
+
+    .poster-link-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .poster-link-list li {
+        margin-bottom: 15px;
+    }
+
+    .poster-link-list a {
+        display: block;
+        padding: 15px;
+        background-color: #2196F3; /* Biru Langit untuk latar belakang link */
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-align: left;
+    }
+
+    .poster-link-list a:hover {
+        background-color: #1976D2; /* Biru yang lebih gelap saat di-hover */
+        transform: translateY(-2px); /* Efek sedikit terangkat saat di-hover */
+    }
+
+    .icon-tech::before {
+        content: '⚙️'; /* Ikon roda gigi untuk tema Teknologi */
+        margin-right: 10px;
+    }
+
+    .icon-search::before {
+        content: '🔎'; /* Ikon pencarian */
+        margin-right: 10px;
+    }
+	
+	/* Styling untuk Area Gambar Poster */
+#poster-image-area {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #f7f7f7; /* Latar belakang abu-abu muda */
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Bayangan lembut */
+}
+
+#poster-image-area h3 {
+    color: #2196F3; /* Biru Langit (dari palet 'alam') */
+    margin-bottom: 20px;
+    font-size: 1.4em;
+}
+
+.poster-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Jarak antar gambar */
+    justify-content: center;
+}
+
+.poster-item {
+    width: 200px; /* Lebar tetap untuk setiap item gambar */
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+
+.poster-item:hover {
+    transform: translateY(-5px); /* Efek melayang saat kursor di atas */
+}
+
+.poster-item img {
+    width: 100%;
+    /* Tinggi gambar disamakan (agar rapi). Gunakan ukuran yang sama pada gambar asli Anda. */
+    height: 280px; 
+    object-fit: cover; /* Memastikan gambar mengisi area tanpa terdistorsi */
+    display: block;
+}
+
+.poster-item a {
+    display: block;
+    padding: 10px 5px;
+    background-color: #00BCD4; /* Warna default: Cyan Elektrik */
+    color: white;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.search-button-poster {
+    margin-top: 25px;
+    padding: 12px 25px;
+    background-color: #FFEB3B; /* Kuning Sinar */
+    color: #333;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.search-button-poster:hover {
+    background-color: #fdd835;
+}
+	
+</style>
+
+<div class="conteiner">
+    <h2>Tamplate Poster (Sesuai Tema)</h2>
+    <ul class="poster-link-list">
+        <li>
+            <a href="https://www.canva.com/templates/?query=poster-alam-dan-lingkungan" target="_blank" class="icon-tech">
+                Poster Digital alam dan lingkungan
+            </a>
+        </li>
+		 <li>
+            <a href="https://www.canva.com/templates/?query=poster-pendidikan" target="_blank" class="icon-tech">
+                Poster Digital Pendidikan
+            </a>
+        </li>
+		<li>
+            <a href="https://www.canva.com/templates/?query=poster-kesehatan" target="_blank" class="icon-tech">
+                Poster Digital Kesehatan
+            </a>
+        </li>
+		<li>
+            <a href="https://www.canva.com/id_id/poster/contoh/teknologi/" target="_blank" class="icon-tech">
+                Poster Digital Teknologi
+            </a>
+        </li>
+        <li>
+            <a href="https://www.canva.com/templates/?query=poster-makanan" target="_blank" class="icon-tech">
+                Poster Digital Makanan
+            </a>
+        </li>
+        <li>
+            <a href="https://www.canva.com/templates/?query=poster-retro
+		" target="_blank" class="icon-tech">
+                Poster Digital Retro
+            </a>
+        </li>
+        <li>
+            <a href="https://www.google.com/search?q=desain+poster+teknologi" target="_blank" class="icon-search" style="background-color: #FFEB3B; color: #333;">
+                Cari Contoh Lain di Google Search
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="poster-image-area">
+        <h3>Contoh Poster</h3>
+        
+        <div class="poster-grid" id="poster-display-grid">
+            <p style="color: #555;">Pilih salah satu tema di atas untuk menampilkan contoh gambar poster.</p>
+        </div>
+
+        <a href="https://www.google.com/search?q=contoh+poster+menarik&sca_esv=7d89f7df8bf3943f&rlz=1C1GCEA_enID1188ID1188&udm=2&biw=1280&bih=593&ei=c8IfaefKJMOD4-EPwoiY-AY&ved=0ahUKEwin0OHmjYKRAxXDwTgGHUIEBm8Q4dUDCBI&uact=5&oq=contoh+poster+menarik&gs_lp=Egtnd3Mtd2l6LWltZyIVY29udG9oIHBvc3RlciBtZW5hcmlrMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIEEAAYHjIEEAAYHjIEEAAYHjIEEAAYHjIGEAAYCBgeMgYQABgIGB5I8DNQpAFY4ytwAXgAkAEAmAHqA6AB4AiqAQc0LjMuNC0xuAEDyAEA-AEBmAIJoAK1CcICDRAAGIAEGLEDGEMYigXCAggQABiABBixA8ICBhAAGAcYHsICChAAGIAEGEMYigXCAg4QABiABBixAxiDARiKBZgDAIgGAZIHBzUuMy40LTGgB8IusgcHNC4zLjQtMbgHrAnCBwcwLjEuNC40yAc_&sclient=gws-wiz-img" target="_blank" class="search-button-poster" id="search-link">
+             🔎 Contoh poster
+        </a>
+    </div>
     </div>
 </div>
 
 <script>
     // Objek untuk menyimpan palet warna berdasarkan tema
+	
     const paletWarna = {
         'alam': [
             { hex: '#4CAF50', deskripsi: 'Hijau Daun' },
@@ -157,7 +343,7 @@
 
         if (tema in paletWarna) {
             const palet = paletWarna[tema];
-            hasilPaletDiv.querySelector('p').textContent = `Palet Rekomendasi untuk Tema **${tema.toUpperCase()}**:`;
+            hasilPaletDiv.querySelector('p').textContent = Palet Rekomendasi untuk Tema **${tema.toUpperCase()}**:;
 
             palet.forEach(warna => {
                 const box = document.createElement('div');
@@ -177,6 +363,7 @@
         } else {
             hasilPaletDiv.querySelector('p').textContent = "Silakan pilih tema di atas untuk melihat rekomendasi palet warna.";
         }
+		
     }
     
     // Fungsi sederhana untuk menentukan warna teks kontras (putih atau hitam)
@@ -192,8 +379,58 @@
         
         // Pilih warna teks (putih untuk gelap, hitam untuk terang)
         return luminance > 0.5 ? '#000000' : '#FFFFFF'; 
+
     }
+/* Objek untuk menyimpan data gambar poster (URL gambar dan link sumber) berdasarkan tema */
+const contohPosterData = {
+    'Alam & Lingkungan': [
+        {
+            nama: "Poster Lingkungan",
+            image_url: "https://via.placeholder.com/200x280/4CAF50/FFFFFF?text=Alam+1",
+            link: "https://www.canva.com/id_id/poster/contoh/alam-lingkungan-hidup/"
+        },
+        {
+            nama: "Poster Go Green",
+            image_url: "https://via.placeholder.com/200x280/8BC34A/FFFFFF?text=Alam+2",
+            link: "https://id.pinterest.com/pin/poster-tentang-lingkungan-hidup"
+        },
+        {
+            nama: "Poster Hemat Air",
+            image_url: "https://via.placeholder.com/200x280/2196F3/FFFFFF?text=Alam+3",
+            link: "https://www.google.com/search?q=poster+hemat+air"
+        }
+    ],
+    'Pendidikan': [
+        {
+            nama: "Poster Motivasi Belajar",
+            image_url: "https://via.placeholder.com/200x280/9C27B0/FFFFFF?text=Pendidikan+1",
+            link: "https://www.canva.com/id_id/poster/contoh/pendidikan/"
+        }
+    ],
+    'Kesehatan': [
+        {
+            nama: "Poster Cuci Tangan",
+            image_url: "https://via.placeholder.com/200x280/E91E63/FFFFFF?text=Kesehatan+1",
+            link: "https://www.canva.com/id_id/poster/contoh/kesehatan/"
+        }
+    ],
+    'Teknologi': [
+        {
+            nama: "Poster AI & Digital",
+            image_url: "https://via.placeholder.com/200x280/00BCD4/FFFFFF?text=Teknologi+1",
+            link: "https://www.canva.com/id_id/poster/contoh/teknologi/"
+        },
+        {
+            nama: "Poster Keamanan Data",
+            image_url: "https://via.placeholder.com/200x280/212121/FFFFFF?text=Teknologi+2",
+            link: "https://www.google.com/search?q=poster+keamanan+data"
+        }
+    ]
+    // Pastikan semua opsi tema di dropdown Anda ada di sini
+};
+
 </script>
+
 
 </body>
 </html>
